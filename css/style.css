@@ -575,7 +575,185 @@ body::before {
   font-size: 0.75em;
 }
 
+/* Mobile: horizontal 3-icon tab bar (hidden on desktop) */
+.mobile-tab-bar-wrapper {
+  display: none;
+}
+
+.mobile-sub-menu,
+.mobile-sub-dropdown {
+  display: none;
+}
+
+/* Back to top: bottom-left, visible on scroll */
+.back-to-top {
+  position: fixed;
+  left: 1.25rem;
+  bottom: calc(1.25rem + env(safe-area-inset-bottom));
+  z-index: 100;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: #2C3539;
+  color: #e0e4e8;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: opacity 0.2s, transform 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.back-to-top.is-visible {
+  display: flex;
+}
+
+.back-to-top:hover {
+  background: #3d464b;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.back-to-top:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.back-to-top svg {
+  display: block;
+}
+
 @media (max-width: 768px) {
+  .mobile-tab-bar-wrapper {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: #2C3539;
+  }
+
+  .mobile-tab-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 0.5rem;
+    background: #2C3539;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .mobile-tab-icon {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 0.5rem 0.25rem;
+    background: transparent;
+    border: none;
+    border-radius: 0.5rem;
+    color: #e0e4e8;
+    font-size: 0.7rem;
+    font-weight: 600;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .mobile-tab-icon:hover,
+  .mobile-tab-icon:focus {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    outline: none;
+  }
+
+  .mobile-tab-icon[aria-selected="true"] {
+    color: #6eb5ff;
+    background: rgba(110, 181, 255, 0.15);
+  }
+
+  .mobile-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+  }
+
+  .mobile-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .mobile-tab-label {
+    line-height: 1.1;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .mobile-sub-dropdown {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background: #1e2328;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0 0 0.5rem 0.5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    padding: 0.5rem 0;
+    max-height: 50vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    z-index: 21;
+  }
+
+  .mobile-sub-dropdown.is-open {
+    display: block;
+  }
+
+  .mobile-sub-option {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin: 0 0.5rem 0.25rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 0.5rem;
+    color: #e0e4e8;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .mobile-sub-option:hover,
+  .mobile-sub-option:focus {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    outline: none;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
   .header-main {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -591,14 +769,6 @@ body::before {
 
   .app-layout {
     flex-direction: column;
-  }
-
-  .sidebar {
-    width: 100%;
-    min-width: 0;
-    padding: 0.75rem 1rem;
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .tab-tree {

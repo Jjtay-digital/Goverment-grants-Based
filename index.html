@@ -16,6 +16,33 @@
       </a>
     </div>
   </header>
+  <div class="mobile-tab-bar-wrapper">
+    <nav class="mobile-tab-bar" aria-label="Grant categories" role="tablist">
+      <button type="button" class="mobile-tab-icon" role="tab" aria-selected="true" data-category="monetary" aria-label="Monetary Grant" title="Monetary Grant">
+        <span class="mobile-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </span>
+        <span class="mobile-tab-label">Monetary</span>
+      </button>
+      <button type="button" class="mobile-tab-icon" role="tab" aria-selected="false" data-category="operations" aria-label="Operations" title="Operations">
+        <span class="mobile-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </span>
+        <span class="mobile-tab-label">Operations</span>
+      </button>
+      <button type="button" class="mobile-tab-icon" role="tab" aria-selected="false" data-category="business-cost" aria-label="Business Cost Reduction" title="Business Cost Reduction">
+        <span class="mobile-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        </span>
+        <span class="mobile-tab-label">Business</span>
+      </button>
+    </nav>
+    <div class="mobile-sub-dropdown" id="mobile-sub-menu" aria-hidden="true">
+      <button type="button" class="mobile-sub-option" data-panel="panel-psg">PSG - AI</button>
+      <button type="button" class="mobile-sub-option" data-panel="panel-eci">ECI</button>
+      <button type="button" class="mobile-sub-option" data-panel="panel-startup-sg">SG Startup Tech</button>
+    </div>
+  </div>
   <div class="app-layout">
     <aside class="sidebar" role="navigation">
       <ul class="tab-tree sidebar-dropdowns" role="tree" aria-label="Grant categories">
@@ -227,6 +254,9 @@
     </main>
   </div>
 
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top" title="Back to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
   <script src="js/main.js"></script>
 </body>
 </html>
